@@ -1,0 +1,49 @@
+data:
+  data_root: ""
+  manifest: ""
+  data_layout: subject_eye
+  max_subjects:
+  seed: 20260521
+
+output:
+  output_dir: ""
+
+training:
+  batch_size: 128
+  eval_batch_size: 128
+  num_workers: 0
+  cache_images: false
+  image_size: 224
+  global_epochs: 20
+  local_epochs: 20
+  integrated_epochs: 20
+  full_epochs: 40
+  lr: 0.0001
+  min_lr: 0.000001
+  weight_decay: 0.0001
+  grad_clip: 5.0
+  arcface_start_epoch: 1
+  arcface_lr: 0.00005
+  arcface_min_lr: 0.000001
+  arcface_weight_decay: 0.0001
+  eval_every: 10
+  amp_init_scale: 4096.0
+  augment_level: baseline
+
+model:
+  proj_dim: 128
+  k_local: 4
+  num_tokens: 4
+  dropout: 0.1
+  fusion_branch_dropout: 0.10
+  diversity_weight: 0.03
+  local_bg_loss_weight: 0.003
+  local_feature_stage: stage3
+  local_patch_radius: 1
+  token_prior_radius: 2
+  cdm_negative_topq: 8
+  nms_radius: 1
+  saliency_intersection_weight: 0.0
+  arcface_scale: 64.0
+  arcface_margin: 0.5
+  arcface_warmup_epochs: 0
